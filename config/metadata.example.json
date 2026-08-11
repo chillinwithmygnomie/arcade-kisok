@@ -1,0 +1,6 @@
+{
+  "provider": "thegamesdb",
+  "api_key": "YOUR_API_KEY_HERE",
+  "fetch_on_boot": false,
+  "sleep_between_requests": 0.5
+}
