@@ -1,0 +1,13 @@
+[Unit]
+Description=Kiosk web backend
+After=network.target
+
+[Service]
+User=kiosk
+Group=kiosk
+WorkingDirectory=/home/kiosk/kiosk-web
+ExecStart=/home/kiosk/kiosk-web/venv/bin/uvicorn kiosk_web.main:app --host 0.0.0.0 --port 8080
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
