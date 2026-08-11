@@ -1,0 +1,13 @@
+[Unit]
+Description=Generate EmulationStation gamelists at boot
+After=multi-user.target
+
+[Service]
+Type=oneshot
+User=kiosk
+Group=kiosk
+ExecStart=/usr/bin/python3 /home/kiosk/tools/generate_gamelists.py --romdir /home/kiosk/roms --merge
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
